@@ -105,11 +105,8 @@ p{
 	bottom: 0px;
 }
 
-.test {
+#langage {
 	position: absolute;
 	top: 0;
-	right: 0;
-	width: 100px;
-	height: 100px;
-	background: red;
+	left: 0;
 }
