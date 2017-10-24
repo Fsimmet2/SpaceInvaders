@@ -28,7 +28,7 @@
   function moveRight(e){
     if (e.keyCode == "39" ){
         var ele = getComputedStyle(joueur).marginLeft;
-        if (parseInt(ele) <= l - 70){
+        if (parseInt(ele) <= l - 95){
          var x = (parseInt(ele) + 10);
          console.log(x);
          elem.style.marginLeft = x + "px";
@@ -39,8 +39,11 @@
 
 var maxWidth = window.innerWidth;
 var maxHeight = window.innerHeight;
-var div = document.querySelector(".test");
-var divPos = {top: 0; right: 0};
-  function move(){
+var div = document.querySelector(".langage".style);
+var divPos = {top: 0, right: 0};
+console.log(div);
+console.log(maxWidth);
+console.log(maxHeight);
+//   function move(){
 
-  }
+//   }
