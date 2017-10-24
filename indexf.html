@@ -2,10 +2,12 @@
 <html>
 <head>
 	<title>C0D3 1NV4D3RS</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="stylef.css">
+	<meta charset="utf-8">
 </head>
 <body>
 	<main>
+		<section class="acceuil">
 		<h1>C0D3 1NV4D3RS</h1>
 		<h2>Règle du jeu</h2>
 		<section class="info">
@@ -164,11 +166,16 @@
 		</ul>
 	</section>	
 	<section>
-		<a href="jeu.html">
-			<div class="play">Let's go</div>
-		</a>
+		<div class="btn"><button class="play" onClick="switchGame('.acceuil','.jeu')">Let's go</button></div>
+	</section>
+	</section>
+	<section class=jeu> 
+		<p>Jeu</p>
+		<div class="test"></div>
+		<div id="joueur"><img src="images/001-dancer.svg" alt="joueur" width="50" height="50"/></div>
+		<div class="btn"><button class="play" onClick="switchGame('.jeu','.acceuil')">Acceuil</button></div>
 	</section>	
 </main>
-<script type="text/javascript" src="js.js"></script>
+<script type="text/javascript" src="jsf.js"></script>
 </body>
 </html>
