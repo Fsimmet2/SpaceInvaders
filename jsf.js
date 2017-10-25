@@ -40,60 +40,80 @@
   }
   }
 
-  var elem = document.querySelector("#langage");
-  console.log(elem.getBoundingClientRect().top);
+
+
+
+
+
+
+  
+
+
+
 
   function myMove() {
 
-    var x = getComputedStyle(langage).top;
+
     var elem = document.querySelector("#langage");
+    var position = elem.getBoundingClientRect();
+     console.log(elem);
+     console.log(position.top);
 
-    console.log(x);
-    console.log(elem);
+    var posx = position.top;
+    var elem = document.querySelector("#langage");
+    var posy = position.right;
+    console.log(position);
+    console.log(posx);
+    console.log(posy);
+   // console.log(elem);
 
-    var pos = parseInt(x);
+    // var pos = parseInt(x);
     var id = setInterval(frame, 10);
     var maxWidth = window.innerWidth;
 
 
     function frame() {
 
-      if (pos == maxWidth - 545) {
+      if (posx == maxWidth - position.width) {
 
        clearInterval(id);
-       myMoveB(200, 1);
+       console.log(position);
+       myMoveB();
 
       } else {
-        
-        pos++; 
-        elem.style.left = pos + 'px'; 
+
+        posx++; 
+        elem.style.left = posx + 'px';
       }
     }
   }
 
-  function myMoveB(y, nb) {
+
+  function myMoveB() {
     var x = getComputedStyle(langage).top;
     var pos = parseInt(x);
+    var elem = document.querySelector("#langage");
     var id = setInterval(frame, 10);
+    var position = elem.getBoundingClientRect();
     function frame() {
-      if (pos == y) {
+      if (pos == (position.bottom/2)) {
        clearInterval(id);
-       if(nb == "1"){
         myMoveL();
-       }else {
-         myMove();
-       }
-       
-      } else {
-        pos++; 
-        
+      
+       }     
+       else {
+        pos++;       
         elem.style.top = pos + 'px'; 
       }
     }
   }
 
+
+
+
+
   function myMoveL() {
-    console.log(elem);
+    var elem = document.querySelector("#langage");
     var x = getComputedStyle(langage).left;
     var maxWidth = window.innerWidth;
     var pos = parseInt(x);
@@ -102,10 +122,9 @@
     function frame() {
       if (pos == 0) {
        clearInterval(id);
-       myMoveB(400);
+       myMoveB();
       } else {
-        pos--; 
-        
+        pos--;       
         elem.style.left = pos + 'px'; 
       }
     }
