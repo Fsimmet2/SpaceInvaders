@@ -54,6 +54,8 @@
 
   function myMove() {
 
+   
+
 console.log('move');
     var elem = document.querySelector("#langage");
     var position = elem.getBoundingClientRect();
@@ -135,6 +137,7 @@ console.log('move');
     var id = setInterval(frame, 10);
     function frame() {
       if (pos == 0) {
+        document.querySelector("#img3").style.display = "none"; 
        clearInterval(id);
        myMoveB();
       } else {
@@ -241,3 +244,16 @@ console.log('move');
   //   }
   // }
   
+var img = document.querySelectorAll('.images'); 
+
+function colision (){
+  for(var i = 0; i <  ;i++ ) {
+
+  }
+  if(img[i].bottom){
+
+  }
+  if(missile.top = img[i].bottom){
+
+  }
+}
