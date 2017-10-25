@@ -169,14 +169,20 @@
 			</svg><p>Rapporte 1000 points</p></li>
 		</ul>
 	</div>
-		
-
 	</section>	
+	<section class="nomjoueur">
+		<div>Entrez votre nom : <input type="text"/></div>
+	</section>
 	<section>
 		<div class="btn"><button class="play" onClick="switchGame('.acceuil','.jeu')">Let's go</button></div>
 	</section>
 	</section>
 	<section class=jeu> 
+		<header>
+			<p class="score">SC0R3 :</p>
+			<p id="nom"></p>
+			<div class="ac"><button class="acc" onClick="switchGame('.jeu','.acceuil')">Acceuil</button></div>
+		</header>
 			<div class="wifi">
 					<img src="images/wifi.svg" width="70" height="70">
 				</div>
@@ -239,7 +245,7 @@
 					</div>
 				</div>
 		<div id="joueur"><img src="images/001-dancer.svg" alt="joueur" width="80" height="80"/></div>
-		<div class="btn"><button class="play" onClick="switchGame('.jeu','.acceuil')">Acceuil</button></div>
+		
 	</section>	
 </main>
 <script type="text/javascript" src="jsf.js"></script>

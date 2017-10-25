@@ -13,6 +13,7 @@
 body{
 	background-image: url('images/fondessai3.jpg');   
 	background-size: cover;
+	margin: 0px; 
 }	
 
 h1, h2{
@@ -36,6 +37,24 @@ h2{
 .info{
 	display: flex;
 	justify-content: space-around;
+}
+
+.nomjoueur{
+	font-family: 'boogalooR'; 
+	color: #f6f6f6; 
+	font-size: 1.7em; 
+	text-align: center;
+}
+
+input{
+	width: 300px; 
+	border-radius: 5px; 
+	border: none;
+	height: 35px; 
+	font-size: 1em;
+	padding-left: 5px; 
+	color: rgb(63, 87, 109); 
+	font-family: 'boogalooR'; 
 }
 
 .regle{
@@ -120,6 +139,47 @@ button:hover{
 	top: 0;
 	left: 0;
 }
+
+header{
+	background-color: rgba(0, 0, 0, 0.5);
+	display: flex;
+	justify-content: space-between; 
+}
+
+.score{
+	margin-top: 0px;
+	color: #f6f6f6;
+	font-family: 'boogalooR'; 
+	font-size: 1.4em; 
+	padding-top: 20px;
+	padding-left: 20px;  
+}
+
+.acc{
+	margin: 10px 20px 10px 0px; 
+	font-family: 'boogalooR'; 
+	font-size: 1.4em; 
+	text-align: center;
+	padding-top: 10px; 
+	padding-bottom: 10px; 
+	background-color: transparent;  	
+	border-radius: 5px;  
+	width: 200px; 
+}
+
+.acc:hover{
+	background-color: rgba(132, 166, 160, 0.7);  
+}
+
+.ac{
+	text-align: right;
+}
+
+#nom{
+	font-family: 'fascinateR'; 
+	color: #f6f6f6; 
+}
+
 
 /*media queries*/
 @media screen and (min-width: 1024px){
