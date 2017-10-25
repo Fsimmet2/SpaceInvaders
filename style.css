@@ -1,3 +1,4 @@
+/*Police Personnalise*/
 @font-face{
 	font-family: 'boogalooR'; 
 	src: url('fonts/Boogaloo-Regular.ttf'); 
@@ -8,6 +9,7 @@
 	src: url('fonts/FascinateInline-Regular.ttf'); 
 }
 
+/*Generalite*/
 body{
 	background-image: url('images/fo.jpg');   
 	background-size: cover;
@@ -30,6 +32,7 @@ h2{
 	margin-top: 0px; 
 }
 
+/*Page accueil*/
 .regle{
 	color: #f6f6f6;
 	text-align: justify;
@@ -85,3 +88,17 @@ a{
 p{
 	padding-left: 30px; 
 }
+
+/*Media Queries*/
+@media (min-width: 768px) {
+
+}
+
+
+@media (min-width: 992px) { 
+}
+
+@media (min-width: 1200px) { 
+	
+}
+
