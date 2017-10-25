@@ -54,8 +54,6 @@
 
   function myMove() {
 
-   
-
 console.log('move');
     var elem = document.querySelector("#langage");
     var position = elem.getBoundingClientRect();
@@ -245,15 +243,21 @@ console.log('move');
   // }
   
 var img = document.querySelectorAll('.images'); 
+var miss = document.querySelector('.missile'); 
+console.log(img); 
 
 function colision (){
-  for(var i = 0; i <  ;i++ ) {
+  for(var i = 0; i < img.length; i++ ) {
 
-  }
-  if(img[i].bottom){
+    img[i].getBoundingClientRect.bottom; 
+    miss.getBoundingClientRect.top;
 
-  }
-  if(missile.top = img[i].bottom){
+  if(img[i] == miss.top){
 
+    if(miss.top == img[i].left || img[i].right){
+      img[i].style.display = none; 
+    }
+    }
   }
+
 }
