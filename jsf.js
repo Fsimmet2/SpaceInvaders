@@ -47,24 +47,24 @@
 
 
   
+// fonction bouger div
 
 
-
+// Fonction move Right
 
   function myMove() {
 
-
+console.log('move');
     var elem = document.querySelector("#langage");
     var position = elem.getBoundingClientRect();
      console.log(elem);
-     console.log(position.top);
+     console.log(position.left);
 
-    var posx = position.top;
+    var posx = position.left;
     var elem = document.querySelector("#langage");
-    var posy = position.right;
+   
     console.log(position);
     console.log(posx);
-    console.log(posy);
    // console.log(elem);
 
     // var pos = parseInt(x);
@@ -78,7 +78,7 @@
 
        clearInterval(id);
        console.log(position);
-       myMoveB();
+       myMoveB(1);
 
       } else {
 
@@ -88,31 +88,45 @@
     }
   }
 
-
-  function myMoveB() {
-    var x = getComputedStyle(langage).top;
-    var pos = parseInt(x);
+// fonction move bottom
+    
+  function myMoveB(nb) {
+    console.log('moveb');
+    var y = getComputedStyle(langage).top;
+    var posy = parseInt(y);
     var elem = document.querySelector("#langage");
     var id = setInterval(frame, 10);
     var position = elem.getBoundingClientRect();
+
+    var posY = position.y;
+    console.log("position.width = " + position.height/3);
+
+    console.log("position.bottom = " + position.bottom/2);
+    console.log("posy : " + posy);
     function frame() {
-      if (pos == (position.bottom/2)) {
+      if (posy == (posY +(position.height/4))) {
        clearInterval(id);
+       if (nb == 1){
         myMoveL();
+       } else {
+         myMove();
+       }
+        
       
        }     
        else {
-        pos++;       
-        elem.style.top = pos + 'px'; 
+        posy++;       
+        elem.style.top = posy + 'px'; 
       }
     }
   }
 
 
-
+// fonction move left
 
 
   function myMoveL() {
+    console.log('movel');
     var elem = document.querySelector("#langage");
     var x = getComputedStyle(langage).left;
     var maxWidth = window.innerWidth;
