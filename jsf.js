@@ -7,38 +7,38 @@
       myMove();
   }
 
-  var l = window.innerWidth;
-  var h = window.innerHeight;
-  var elem = document.querySelector("#joueur");
-  console.log(l);
-  window.addEventListener("keydown", moveLeft);
-  window.addEventListener("keydown", moveRight);
+//   var l = window.innerWidth;
+//   var h = window.innerHeight;
+//   var elem = document.querySelector("#joueur");
+//   console.log(l);
+//   window.addEventListener("keydown", moveLeft);
+//   window.addEventListener("keydown", moveRight);
 
 
-  function moveLeft(e){
-    if (e.keyCode == "37"){
-        var elle = getComputedStyle(joueur).marginLeft;
-        if (parseInt(elle) >= 0){
-         var x = (parseInt(elle) - 10);
-         console.log(x);
-         elem.style.marginLeft = x + "px";
-         var elle = getComputedStyle(joueur).marginLeft;
-         console.log(elle);}
+//   function moveLeft(e){
+//     if (e.keyCode == "37"){
+//         var elle = getComputedStyle(joueur).marginLeft;
+//         if (parseInt(elle) >= 0){
+//          var x = (parseInt(elle) - 10);
+//          console.log(x);
+//          elem.style.marginLeft = x + "px";
+//          var elle = getComputedStyle(joueur).marginLeft;
+//          console.log(elle);}
 
-  }
-}
+//   }
+// }
 
-  function moveRight(e){
-    if (e.keyCode == "39" ){
-        var ele = getComputedStyle(joueur).marginLeft;
-        if (parseInt(ele) <=  l - 95){
-         var x = (parseInt(ele) + 10);
-         console.log(x);
-         elem.style.marginLeft = x + "px";
-         var ele = getComputedStyle(joueur).marginLeft;
-         console.log(ele);}
-  }
-  }
+//   function moveRight(e){
+//     if (e.keyCode == "39" ){
+//         var ele = getComputedStyle(joueur).marginLeft;
+//         if (parseInt(ele) <=  l - 95){
+//          var x = (parseInt(ele) + 10);
+//          console.log(x);
+//          elem.style.marginLeft = x + "px";
+//          var ele = getComputedStyle(joueur).marginLeft;
+//          console.log(ele);}
+//   }
+//   }
 
 
 
@@ -143,3 +143,101 @@ console.log('move');
       }
     }
   }
+
+
+
+
+
+  var l = window.innerWidth;
+  console.log(l);
+  
+  var elems = document.querySelector("#bonhomme");
+  var missile = document.querySelector("#missile");
+  console.log(elems.getBoundingClientRect());
+  
+  var pos = 0;
+  window.addEventListener("keydown", move);
+  
+  function move(e){
+    if (e.keyCode == "39" ){
+      widthbonhomme = elems.getBoundingClientRect().width;
+      rightbonhomme =  elems.getBoundingClientRect().right;
+      console.log(rightbonhomme);
+      if(rightbonhomme >= l - 20){
+        console.log('stop');
+      }else{
+        console.log(pos);
+        pos += 15;
+        elems.style.marginLeft = pos + "px";
+      }
+      // var ele = getComputedStyle(codeur).marginLeft;
+      // if (parseInt(ele) <= l - 90){
+      //   var x = (parseInt(ele) + 10);
+      //   console.log(x);
+      //   elem.style.marginLeft = x + "px";
+      //   var ele = getComputedStyle(codeur).marginLeft;
+      //   console.log(ele);
+      // }
+    }
+    if (e.keyCode == "37"){
+      widthbonhomme = elems.getBoundingClientRect().width;
+      leftbonhomme = elems.getBoundingClientRect().left;
+      console.log(leftbonhomme);
+      if(leftbonhomme <= 0){
+        console.log('stop');
+      }else{
+        console.log(pos);
+        pos -= 15;
+        elems.style.marginLeft = pos + "px";
+      }
+      // var elle = getComputedStyle(codeur).marginLeft;
+      // if (parseInt(elle) >= 0){
+      //   var x = (parseInt(elle) - 10);
+      //   console.log(x);
+      //   elem.style.marginLeft = x + "px";
+      //   var elle = getComputedStyle(codeur).marginLeft;
+      //   console.log(elle);}
+    }
+    if (e.keyCode == "32" ){
+        //var cln = elmnt.cloneNode(true);
+        // var missile = document.querySelector("#missile");
+        // myMove();
+        var max = window.innerHeight;
+        var bonhomme = document.getElementById('bonhomme');
+        var item = document.getElementById('missile');
+        var cln = item.cloneNode(true);
+        var posMissile = 0;
+        var id = setInterval(frame, 1);
+        cln.style.display = "block";
+        document.getElementById('codeur').appendChild(cln);
+        console.log(cln.style.left);
+        console.log(bonhomme.style.left);
+  
+        cln.style.left = bonhomme.getBoundingClientRect().left + 'px';
+        console.log();
+        function frame(){
+          if(posMissile == -max){
+            clearInterval(id);
+          } else {
+            posMissile++;
+            cln.style.bottom = posMissile + "px";
+          }
+        }
+    }
+  }
+  
+  // function myMove() {
+  //   var max = window.innerHeight;
+  //   var elem = document.getElementById("missile");
+  //   var pos = 0;
+  //   var id = setInterval(frame, 1);
+  //   function frame() {
+  //     if (pos == -max) {
+  //       clearInterval(id);
+  //     } else {
+  //       pos--;
+  //       elem.style.top = pos + 'px';
+  //     }
+  //   }
+  // }
+  
