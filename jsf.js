@@ -246,14 +246,14 @@ console.log('move');
   
 var img = document.querySelectorAll('.images'); 
 
-function colision (){
-  for(var i = 0; i <  ;i++ ) {
+// function colision (){
+//   for(var i = 0; i <  ;i++ ) {
 
-  }
-  if(img[i].bottom){
+//   }
+//   if(img[i].bottom){
 
-  }
-  if(missile.top = img[i].bottom){
+//   }
+//   if(missile.top = img[i].bottom){
 
-  }
-}
+//   }
+// }
