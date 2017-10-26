@@ -242,3 +242,17 @@ console.log('move');
   //     }
   //   }
   // }
+
+  
+  
+   // function colision (){
+   //   for(var i = 0; i < img.length; i++ ) {
+   //     img[i].getBoundingClientRect.bottom; 
+   //     miss.getBoundingClientRect.top;
+   //      if(img[i] == miss.top){
+  
+   //  if(miss.top == img[i].left || img[i].right){
+   //    img[i].style.display = none; 
+   //  }
+   //   }
+   //  }
