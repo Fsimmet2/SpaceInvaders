@@ -46,15 +46,13 @@
 
 
 
-  
+
 // fonction bouger div
 
 
 // Fonction move Right
 
   function myMove() {
-
-   
 
 console.log('move');
     var elem = document.querySelector("#langage");
@@ -64,7 +62,7 @@ console.log('move');
 
     var posx = position.left;
     var elem = document.querySelector("#langage");
-   
+
     console.log(position);
     console.log(posx);
    // console.log(elem);
@@ -84,14 +82,14 @@ console.log('move');
 
       } else {
 
-        posx++; 
+        posx++;
         elem.style.left = posx + 'px';
       }
     }
   }
 
 // fonction move bottom
-    
+
   function myMoveB(nb) {
     console.log('moveb');
     var y = getComputedStyle(langage).top;
@@ -113,12 +111,12 @@ console.log('move');
        } else {
          myMove();
        }
-        
-      
-       }     
+
+
+       }
        else {
-        posy++;       
-        elem.style.top = posy + 'px'; 
+        posy++;
+        elem.style.top = posy + 'px';
       }
     }
   }
@@ -137,12 +135,11 @@ console.log('move');
     var id = setInterval(frame, 10);
     function frame() {
       if (pos == 0) {
-        document.querySelector("#img3").style.display = "none"; 
        clearInterval(id);
        myMoveB();
       } else {
-        pos--;       
-        elem.style.left = pos + 'px'; 
+        pos--;
+        elem.style.left = pos + 'px';
       }
     }
   }
@@ -153,14 +150,15 @@ console.log('move');
 
   var l = window.innerWidth;
   console.log(l);
-  
+
+  var snd = new Audio("pew.mp3");
   var elems = document.querySelector("#bonhomme");
   var missile = document.querySelector("#missile");
   console.log(elems.getBoundingClientRect());
-  
+
   var pos = 0;
   window.addEventListener("keydown", move);
-  
+
   function move(e){
     if (e.keyCode == "39" ){
       widthbonhomme = elems.getBoundingClientRect().width;
@@ -215,7 +213,8 @@ console.log('move');
         document.getElementById('codeur').appendChild(cln);
         console.log(cln.style.left);
         console.log(bonhomme.style.left);
-  
+        snd.play();
+
         cln.style.left = bonhomme.getBoundingClientRect().left + 'px';
         console.log();
         function frame(){
@@ -228,7 +227,7 @@ console.log('move');
         }
     }
   }
-  
+
   // function myMove() {
   //   var max = window.innerHeight;
   //   var elem = document.getElementById("missile");
@@ -243,17 +242,17 @@ console.log('move');
   //     }
   //   }
   // }
+
   
-var img = document.querySelectorAll('.images'); 
-
-// function colision (){
-//   for(var i = 0; i <  ;i++ ) {
-
-//   }
-//   if(img[i].bottom){
-
-//   }
-//   if(missile.top = img[i].bottom){
-
-//   }
-// }
+  
+   // function colision (){
+   //   for(var i = 0; i < img.length; i++ ) {
+   //     img[i].getBoundingClientRect.bottom; 
+   //     miss.getBoundingClientRect.top;
+   //      if(img[i] == miss.top){
+  
+   //  if(miss.top == img[i].left || img[i].right){
+   //    img[i].style.display = none; 
+   //  }
+   //   }
+   //  }
