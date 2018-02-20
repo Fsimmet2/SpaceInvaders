@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Moha</title>
+  <style>
+    #moha {
+      width: 100px;
+      height: 100px;
+      margin-top: 400px;
+      background: red;
+    }
+    #ligne{
+      margin-top: 290px;
+    }  
+    </style>
+</head>
+<body>
+
+  <div id="moha"><img src="ligne.png" alt="ligne" width="20" height="20"/></div>
+
+  <script>
+    var l = window.innerWidth;
+    console.log(l);
+
+    var elem = document.querySelector("#moha");
+    console.log(elem.getBoundingClientRect());
+
+   window.addEventListener("keydown", move);
+
+    var ele = getComputedStyle(moha).marginLeft;
+
+    console.log(ele);
+    console.log(parseInt(ele)+ 30);
+
+   function move(e){
+     if (e.keyCode == "39" ){
+      var ele = getComputedStyle(moha).marginLeft;
+      if (parseInt(ele) <= l - 130){
+       var x = (parseInt(ele) + 10);
+       console.log(x);
+       elem.style.marginLeft = x + "px";
+       var ele = getComputedStyle(moha).marginLeft;
+       console.log(ele);}
+     }
+     if (e.keyCode == "37"){
+      var elle = getComputedStyle(moha).marginLeft;
+      if (parseInt(elle) >= 0){
+       var x = (parseInt(elle) - 10);
+       console.log(x);
+       elem.style.marginLeft = x + "px";
+       var elle = getComputedStyle(moha).marginLeft;
+       console.log(elle);}
+     }
+     if (e.keyCode == "27"){}
+   }
+    
+  </script>
+</body>
+</html>
